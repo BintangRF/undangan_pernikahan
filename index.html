@@ -840,7 +840,6 @@
           JSON.parse(localStorage.getItem("comments")) || [];
 
         var commentsContainer = document.getElementById("comments");
-        commentsContainer.innerHTML = "";
 
         existingComments.forEach(function (comment) {
           var commentDiv = document.createElement("div");
