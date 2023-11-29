@@ -1,0 +1,313 @@
+@import url("https://fonts.cdnfonts.com/css/channel");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+:root {
+  --colorPrimary: rgb(100, 53, 33);
+  --colorSecondary: rgb(129, 79, 42);
+  --colorTertiary: rgb(172, 138, 90);
+  --colorFont: rgb(138, 58, 25);
+  --colorFont2: rgb(227, 220, 210);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--colorTertiary);
+  background-image: url(../assets/bg-tp.png);
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Channel", sans-serif;
+}
+h2 {
+  font-family: "Cabin", sans-serif;
+}
+
+h2.prime {
+  color: var(--colorPrimary);
+
+  text-shadow: 2px 2px 5px rgb(65, 65, 65);
+}
+
+h1.span {
+  color: var(--colorFont);
+  text-shadow: 2px 2px 5px rgb(120, 120, 120);
+}
+
+.letterspacing {
+  letter-spacing: -10px;
+}
+
+button.btn {
+  background-color: var(--colorPrimary);
+  color: var(--colorFont2);
+}
+
+@media (min-width: 640px) {
+  .circular--portrait {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ===== Home ===== */
+header.navbar {
+  background-color: rgba(172, 138, 90, 0.5);
+  color: var(--colorFont);
+  backdrop-filter: blur(2px);
+}
+
+.circular--portrait {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  outline: 5px solid var(--colorSecondary);
+  outline-offset: -0.3em;
+}
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
+
+h1.span1 {
+  color: var(--colorPrimary);
+  text-shadow: 2px 2px 5px rgba(120, 120, 120, 0.087);
+}
+
+.letterspacing1 {
+  letter-spacing: -10px;
+  color: var(--colorSecondary);
+}
+
+div.card {
+  background-color: rgba(227, 220, 210, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/*===== Vertical story =====*/
+
+#story .conference-center-line {
+  background: var(--colorSecondary);
+  z-index: -1;
+}
+
+.story-article .content-left,
+.story-article .content-right {
+  background-color: var(--colorFont2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.709);
+}
+.story-article p {
+  color: var(--colorFont);
+}
+.story-article p span.article-number {
+  color: var(--colorPrimary);
+}
+.story-article .content-left-container {
+  max-width: 45%;
+  float: left;
+}
+.story-article .content-right-container {
+  max-width: 45%;
+  float: right;
+}
+h2.story-caption {
+  color: var(--colorFont2);
+  font-style: italic;
+  text-shadow: 2px 2px 5px rgba(120, 120, 120, 0.087);
+}
+
+.slider-for div {
+  margin-bottom: 10px;
+}
+
+.slider-nav a {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+/* .story-article .content-left:before,
+.story-article .content-right:before {
+  position: absolute;
+  top: 20px;
+  font-size: 23px;
+  font-family: "FontAwesome";
+  color: var(--colorFont2);
+}
+.story-article .content-left:before {
+  content: "\f0da";
+  right: -8px;
+}
+.story-article .content-right:before {
+  content: "\f0d9";
+  left: -8px;
+} */
+
+/*===== // Vertical story =====*/
+
+/*===== Resonsive Vertical story =====*/
+@media only screen and (max-width: 830px) {
+  #conference-story .conference-center-line {
+    margin-left: 0;
+    left: 50px;
+  }
+  .story-article .content-left-container,
+  .story-article .content-right-container {
+    max-width: 200%;
+    width: auto;
+    float: none;
+    margin-left: 10px;
+    min-height: 53px;
+  }
+  .story-article .content-left-container {
+    margin-bottom: 20px;
+  }
+  .story-article .content-left,
+  .story-article .content-right {
+    padding: 10px 25px;
+    min-height: 65px;
+  }
+  .story-article .content-left:before {
+    content: "\f0d9";
+    right: auto;
+    left: -8px;
+  }
+  .story-article .content-right:before {
+    content: "\f0d9";
+    right: auto;
+    left: -8px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .story-article p {
+    margin: 0;
+  }
+  .story-article p span.article-number {
+    display: none;
+  }
+}
+/*===== // Resonsive Vertical story =====*/
+
+/*===== // RSVP =====*/
+.rsvp-box::before {
+  content: "";
+  background-image: url("../assets/bg-tp.png");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+}
+
+label.kehadiran,
+div.input-rsvp,
+select,
+.peer:focus {
+  color: var(--colorFont);
+}
+
+label {
+  color: var(--colorSecondary);
+}
+
+/*===== // RSVP =====*/
+
+/*===== // Gifts =====*/
+.copy-text button:active {
+  background: #809ce2;
+}
+.copy-text button:before {
+  content: "Copied";
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  background: #5c81dc;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  display: none;
+}
+.copy-text button:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: #5c81dc;
+  transform: rotate(45deg);
+  display: none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+  display: block;
+}
+.copy-text2 button:active {
+  background: #809ce2;
+}
+.copy-text2 button:before {
+  content: "Copied";
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  background: #5c81dc;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  display: none;
+}
+.copy-text2 button:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: #5c81dc;
+  transform: rotate(45deg);
+  display: none;
+}
+.copy-text2.active button:before,
+.copy-text2.active button:after {
+  display: block;
+}
+
+div.comment-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  color: var(--colorFont2);
+  text-transform: capitalize;
+}
+
+div.comment-container:nth-child(odd) {
+  background-color: var(--colorTertiary);
+}
+
+div.profil {
+  font-size: 3rem;
+  border-right: 2px solid var(--colorFont2);
+  width: 3.5rem;
+  text-align: center;
+  font-family: "Cabin", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+div.nama {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/*===== // Gifts =====*/
