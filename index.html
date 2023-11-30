@@ -262,7 +262,7 @@
           </div>
         </div>
 
-        <!-- Article -->
+        <!-- story -->
         <div
           class="relative w-full h-full mx-0 my-5 overflow-hidden story-article"
           data-aos="fade-up">
@@ -284,7 +284,7 @@
           </div>
         </div>
 
-        <!-- Article -->
+        <!-- story -->
         <div
           class="relative w-full h-full mx-0 my-5 overflow-hidden story-article"
           data-aos="fade-up">
@@ -431,73 +431,76 @@
               <div class="px-10 divide-y divide-gray-200">
                 <div
                   class="py-8 space-y-4 text-xl leading-6 input-rsvp sm:leading-7">
-                  <div class="relative">
-                    <input
-                      autocomplete="off"
-                      id="nama"
-                      name="nama"
-                      type="text"
-                      class="w-full h-10 font-semibold placeholder-transparent peer focus:outline-none"
-                      placeholder="nama"
-                      style="background-color: rgba(227, 220, 210, 0.01)" />
-                    <label
-                      for="nama"
-                      class="absolute left-0 -top-3.5 text-base font-medium peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
-                      >NAME</label
-                    >
-                  </div>
-                  <div class="relative">
-                    <input
-                      autocomplete="off"
-                      id="jumlah"
-                      name="jumlah"
-                      type="number"
-                      class="w-full h-10 font-semibold placeholder-transparent peer focus:outline-none"
-                      style="background-color: rgba(227, 220, 210, 0.01)"
-                      placeholder="Jumlah Kehadiran"
-                      min="1" />
-                    <label
-                      for="jumlah"
-                      class="absolute font-medium left-0 text-base -top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
-                      >NUMBER OF ATTENDEES</label
-                    >
-                  </div>
-                  <div class="relative flex">
-                    <label
-                      class="absolute font-medium left-0 text-base mt-3 -top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
-                      >CONFIRM ATTENDANCE</label
-                    >
-                    <div class="mt-5">
+                  <form name="submit-to-google-sheet" id="rsvp-form">
+                    <div class="relative">
                       <input
-                        type="radio"
-                        id="hadir"
-                        name="kehadiran"
-                        value="hadir" />
-                      <label for="hadir" class="font-medium kehadiran hadir"
-                        >PRESENT</label
+                        autocomplete="off"
+                        id="nama"
+                        name="nama"
+                        type="text"
+                        class="w-full h-10 font-semibold placeholder-transparent peer focus:outline-none"
+                        placeholder="nama"
+                        style="background-color: rgba(227, 220, 210, 0.01)"
+                        required />
+                      <label
+                        for="nama"
+                        class="absolute left-0 -top-3.5 text-base font-medium peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
+                        >NAME</label
                       >
                     </div>
-                    <div class="mt-5 ml-10">
+                    <div class="relative">
                       <input
-                        type="radio"
-                        id="tidak"
-                        name="kehadiran"
-                        value="tidak" />
-                      <label for="tidak" class="font-medium kehadiran"
-                        >ABSENT</label
+                        autocomplete="off"
+                        id="jumlah"
+                        name="jumlah"
+                        type="number"
+                        class="w-full h-10 font-semibold placeholder-transparent peer focus:outline-none"
+                        style="background-color: rgba(227, 220, 210, 0.01)"
+                        placeholder="Jumlah Kehadiran"
+                        min="1"
+                        required />
+                      <label
+                        for="jumlah"
+                        class="absolute font-medium left-0 text-base -top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
+                        >NUMBER OF ATTENDEES</label
                       >
                     </div>
-                  </div>
-                  <div class="relative flex justify-center">
-                    <a
-                      href="https://maps.app.goo.gl/iXc74wdA8bcbBim2A"
-                      target="_blank"
-                      ><button
+                    <div class="relative flex">
+                      <label
+                        class="absolute font-medium left-0 text-base mt-3 -top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-base"
+                        >CONFIRM ATTENDANCE</label
+                      >
+                      <div class="mt-5">
+                        <input
+                          type="radio"
+                          id="hadir"
+                          name="kehadiran"
+                          value="hadir"
+                          required />
+                        <label for="hadir" class="font-medium kehadiran hadir"
+                          >PRESENT</label
+                        >
+                      </div>
+                      <div class="mt-5 ml-10">
+                        <input
+                          type="radio"
+                          id="tidak"
+                          name="kehadiran"
+                          value="tidak"
+                          required />
+                        <label for="tidak" class="font-medium kehadiran"
+                          >ABSENT</label
+                        >
+                      </div>
+                    </div>
+                    <div class="relative flex justify-center">
+                      <button
+                        type="submit"
                         class="h-10 px-6 mt-5 font-medium transition-colors duration-150 rounded-lg btn focus:shadow-outline">
                         Confirmation
-                      </button></a
-                    >
-                  </div>
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -762,6 +765,22 @@
             },
           },
         ],
+      });
+    </script>
+
+    <!-- RSVP FORM -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzUJM9HGlm9ZYUwtJ4HzHogdBHeVloULU2MjU0iaWL_F_M0DTYGygrdc4x36e3AuG1D5A/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+        alert("Thank you for your submission");
+        document.getElementById("rsvp-form").reset();
       });
     </script>
 
